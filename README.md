@@ -25,7 +25,7 @@ dotnet build
 dotnet run # http://localhost:5267
 ```
 ## Sample Demo
-# 1. Create a definition
+1. Create a definition
 ```bash
 curl -X POST http://localhost:5267/definitions \
      -H "Content-Type: application/json" \
@@ -43,11 +43,11 @@ curl -X POST http://localhost:5267/definitions \
            ]
          }'
 ```
-# 2. Start an instance
+2. Start an instance
 ```bash
 INSTANCE=$(curl -s -X POST "http://localhost:5267/instances?defId=doc-approval" | jq -r .id)
 ```
-# 3. Execute a transition
+3. Execute a transition
 ```bash
 curl -X POST http://localhost:5267/instances/$INSTANCE/actions/submit
 ```
